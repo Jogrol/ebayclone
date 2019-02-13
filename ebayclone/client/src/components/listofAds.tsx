@@ -8,7 +8,7 @@ export default function ListofAds(props: any) {
       <ul>
         {props.Ads.map((ad: any) => (
           <li key={ad.id}>
-            <Link to={`/product/${ad.id}`}>Product: {ad.title} Price  €{ad.price}</Link>
+            <Link to={`/products/${ad.id}`}><strong>Product:</strong> {ad.title} Price  €{ad.price}</Link>
           </li>
         ))}
       </ul>
