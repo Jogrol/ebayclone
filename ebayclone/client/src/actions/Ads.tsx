@@ -15,7 +15,7 @@ export const loadAds = () => (dispatch : any, getState: any) => {
   
     // a GET /events request
     request(`${baseUrl}/advertisments`)
-      .then(response => { console.log(response.body.advertisements)
+      .then(response => {
         // dispatch an EVENTS_FETCHED action that contains the events
         dispatch(adsFetched(response.body.advertisements))
       })

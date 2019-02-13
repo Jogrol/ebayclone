@@ -7,7 +7,6 @@ export default class MainController {
     @Get("/advertisments")
     async allAds() {
       const advertisements = await Advertisements.find();
-      console.log(advertisements)
       return { advertisements };
     }
 }
