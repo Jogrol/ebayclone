@@ -3,6 +3,7 @@ import * as React from 'react'
 
 export default function AddAdvertisement (props: any) {
     return(<div>
+        <h3>Add a new product</h3>
         <form onSubmit={props.onSubmit} >
             <label >Title: </label>
             <input type ='text' name="name" ></input>

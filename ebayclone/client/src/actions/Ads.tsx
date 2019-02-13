@@ -7,17 +7,28 @@ export const ADS_FETCHED = "ADS_FETCHED"
 export const AD_FETCHED = "AD_FETCHED"
 export const AD_CREATE_SUCCES = "AD_CREATE_SUCCES"
 
+
+export interface AdsInterface {
+    id?: number,
+    title: string
+    description: string
+    picture: string
+    price: number
+    email: string
+    phone_number: number
+  }
+
 const adsFetched = (Ads: any) => ({
     type: ADS_FETCHED,
     Ads
 })
 
-const showAd = (Ad : any) => ({
+const showAd = (Ad : AdsInterface) => ({
     type: AD_FETCHED,
     Ad
 })
 
-const eventAdCompleted = (Ad : any) => ({
+const eventAdCompleted = (Ad : AdsInterface) => ({
     type: AD_CREATE_SUCCES,
     Ad
 })
@@ -36,7 +47,7 @@ export const loadAds = () => (dispatch : any, getState: any) => {
   }
 
 
-export const loadAd = (id : number) => (dispatch: any) => {
+export const loadAd = (id : AdsInterface) => (dispatch: any) => {
     request
     .get(`${baseUrl}/advertisments/${id}`)
         .then(response => {
@@ -45,7 +56,7 @@ export const loadAd = (id : number) => (dispatch: any) => {
     .catch(console.error)
     }
 
-export const createAd = (data: any) => (dispatch: any) => {
+export const createAd = (data: AdsInterface) => (dispatch: any) => {
         request
           .post(`${baseUrl}/advertisments`)
           .send(data)
@@ -54,3 +65,4 @@ export const createAd = (data: any) => (dispatch: any) => {
           })
           .catch(console.error)
       }
+
