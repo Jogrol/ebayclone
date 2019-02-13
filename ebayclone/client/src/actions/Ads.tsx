@@ -1,25 +1,23 @@
 import request from 'superagent'
-import { any } from 'prop-types';
 
 const baseUrl = 'http://localhost:4000'
 
+export const ADS_FETCHED = "ADS_FETCHED"
 
-export const ADS_FETCHED = 'ADS_FESTCHED'
-
-const adsFetched = (ads: any) => ({
+const adsFetched = (Ads: any) => ({
     type: ADS_FETCHED,
-    ads
-  })
+    Ads
+})
 
-export const loadAds = () => (dispatch: any, getState: any) => {
+export const loadAds = () => (dispatch : any, getState: any) => {
     // when the state already contains events, we don't fetch them again
-    if (getState().ads) return
+    if (getState().events) return
   
     // a GET /events request
-    request(`${baseUrl}/ads`)
-      .then(response => { console.log(response)
+    request(`${baseUrl}/advertisments`)
+      .then(response => { console.log(response.body.advertisements)
         // dispatch an EVENTS_FETCHED action that contains the events
-        dispatch(adsFetched(response.body))
+        dispatch(adsFetched(response.body.advertisements))
       })
       .catch(console.error)
   }
