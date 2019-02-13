@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
+import Ads from './Ads'
 
 export default combineReducers({
-  // your reducers will go here
+  Ads
 })
