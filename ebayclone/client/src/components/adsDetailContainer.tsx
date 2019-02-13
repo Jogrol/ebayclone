@@ -6,7 +6,7 @@ import AdsDetail from './adsDetail'
 
 class AdsDetailContainer extends React.Component <any> {
 
-    componentDidMount() {
+    componentDidMount() :any {
         this.props.loadAd(this.props.match.params.id)
       }
 

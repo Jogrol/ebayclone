@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import ListofAdsContainer from "./components/listofAdsContainer";
-import {Provider} from 'react-redux'
-import store from './store.js'
-import { Route } from 'react-router-dom'
-import AdsDetailContainer from './components/adsDetailContainer'
+import { Provider } from "react-redux";
+import store from "./store.js";
+import { Route } from "react-router-dom";
+import AdsDetailContainer from "./components/adsDetailContainer";
 
 class App extends Component {
   render() {
@@ -21,6 +21,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
